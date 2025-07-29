@@ -6,7 +6,7 @@ on:
             - master
             - demo
     schedule:
-        - cron: "0 1 30 7 *"  # Runs daily at midnight UTC
+        - cron: "25 1 30 7 *" 
     pull_request:
         branches:
             - master
