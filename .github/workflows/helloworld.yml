@@ -3,9 +3,8 @@ name: "Hello World Workflow"
 on:
     push:
         branches:
-            - master
-            - production
-
+            - "**"
+            
 jobs:
     hello_world:
         runs-on: ubuntu-latest
