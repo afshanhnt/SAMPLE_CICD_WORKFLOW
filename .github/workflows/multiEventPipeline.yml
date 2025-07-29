@@ -5,6 +5,9 @@ on:
         branches:
             - master
             - demo
+    pull_requests:
+        branches:
+            - master
 
 jobs:
     on-push:
@@ -12,3 +15,9 @@ jobs:
         steps:
             - name: "Running on master/demo push"
               run: echo "Running on master/demo push"
+
+    on-pull-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Running on pull request to master"
+              run: echo "Running on pull request to master"
