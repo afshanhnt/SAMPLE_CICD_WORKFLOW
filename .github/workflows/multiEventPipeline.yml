@@ -23,12 +23,12 @@ jobs:
         if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps:
-            - name: "Running on pull request to master"
-              run: echo "Running on pull request to master" 
+            - name: "Running on pull request"
+              run: echo "Running on pull request" 
 
-    # on-workflow-dispatch:
-    #     if: github.event_name == 'workflow_dispatch'
-    #     runs-on: ubuntu-latest
-    #     steps:
-    #         - name: "Running on workflow dispatch"
-    #           run: echo "Running on workflow dispatch"
+    on-workflow-dispatch:
+        if: github.event_name == 'workflow_dispatch'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Running on workflow dispatch"
+              run: echo "Running on workflow dispatch"
