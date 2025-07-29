@@ -5,8 +5,8 @@ on:
         branches:
             - master
             - demo
-    # schedule:
-    #     - cron: "25 1 30 7 *" 
+    schedule:
+        - cron: "34 1 30 7 *" 
     # pull_request:
     #     branches:
     #         - master
@@ -14,7 +14,7 @@ on:
     #         - closed
     #         - opened
 
-    workflow_dispatch: 
+    # workflow_dispatch: 
     
 
 jobs:
@@ -48,16 +48,16 @@ jobs:
 
 
 
-    on-workflow-dispatch:
-        if: github.event_name == 'workflow_dispatch'
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Running on workflow dispatch"
-              run: echo "Running on workflow dispatch"
-
-    # on-schedule:
-    #     if: github.event_name == 'schedule'
+    # on-workflow-dispatch:
+    #     if: github.event_name == 'workflow_dispatch'
     #     runs-on: ubuntu-latest
     #     steps:
-    #         - name: "Running on schedule"
-    #           run: echo "Running on schedule event"
+    #         - name: "Running on workflow dispatch"
+    #           run: echo "Running on workflow dispatch"
+
+    on-schedule:
+        if: github.event_name == 'schedule'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Running on schedule"
+              run: echo "Running on schedule event"
