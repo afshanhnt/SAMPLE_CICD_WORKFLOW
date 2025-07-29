@@ -5,14 +5,14 @@ on:
         branches:
             - master
             - demo
-    schedule:
-        - cron: "25 1 30 7 *" 
-    pull_request:
-        branches:
-            - master
-        types:
-            - closed
-            - opened
+    # schedule:
+    #     - cron: "25 1 30 7 *" 
+    # pull_request:
+    #     branches:
+    #         - master
+    #     types:
+    #         - closed
+    #         - opened
 
     workflow_dispatch: 
     
@@ -25,26 +25,26 @@ jobs:
             - name: "Running on master/demo push"
               run: echo "Running on master/demo push"
 
-    on-pull-request:
-        if: github.event_name == 'pull_request'
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Running on pull request"
-              run: echo "Running on pull request" 
+    # on-pull-request:
+    #     if: github.event_name == 'pull_request'
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - name: "Running on pull request"
+    #           run: echo "Running on pull request" 
 
-    on-pull-request-opened:
-        if: github.event_name == 'pull_request' && github.event.action == 'opened'
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Running on pull request opened"
-              run: echo "Running on pull request opened"
+    # on-pull-request-opened:
+    #     if: github.event_name == 'pull_request' && github.event.action == 'opened'
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - name: "Running on pull request opened"
+    #           run: echo "Running on pull request opened"
 
-    on-pull-request-closed:
-        if: github.event_name == 'pull_request' && github.event.action == 'closed'
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Running on pull request closed"
-              run: echo "Running on pull request closed"
+    # on-pull-request-closed:
+    #     if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - name: "Running on pull request closed"
+    #           run: echo "Running on pull request closed"
 
 
 
@@ -55,9 +55,9 @@ jobs:
             - name: "Running on workflow dispatch"
               run: echo "Running on workflow dispatch"
 
-    on-schedule:
-        if: github.event_name == 'schedule'
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Running on schedule"
-              run: echo "Running on schedule event"
+    # on-schedule:
+    #     if: github.event_name == 'schedule'
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - name: "Running on schedule"
+    #           run: echo "Running on schedule event"
